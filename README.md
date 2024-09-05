@@ -1,8 +1,8 @@
 # INSTALL-PARTY-IA
 
 # INSTALL PARTY 🎉
-> **Nota**:  
-> Los usuarios de **Mac** no necesitan instalar WSL, ya que su terminal es de Linux por defecto.
+### > **Nota**:  
+### > Los usuarios de **Mac** no necesitan instalar WSL, ya que su terminal es de Linux por defecto.
 
 ## Instalar WSL en Windows:
 1. **PowerShell**:  
