@@ -78,5 +78,77 @@ Si al escribir `code` en la terminal no se abre VSCode:
 3. Escribe `shell` y selecciona la opción "Instalar el comando code en Path".
 
 ---
+```
+sudo apt update
+```
+```
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git
+```
+### Python OpenSSL
 
+### Descargar e instalar pyenv:
+``` curl https://pyenv.run | bash ```
 
+### Agregar pyenv al archivo de configuración del shell:
+```
+echo -e '\n# Pyenv configuration' >> ~/.bashrc  
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc  
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc  
+echo 'eval "$(pyenv init --path)"' >> ~/.bashrc  
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc  
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+```
+### Aplicar los cambios al archivo de configuración:
+```
+source ~/.bashrc
+```
+### Instalar la última versión de Python disponible:
+```
+LATEST_PYTHON=$(pyenv install --list | grep -E "^\s*[0-9]+\.[0-9]+\.[0-9]+$" | tail -1 | tr -d '[:space:]')  
+pyenv install $LATEST_PYTHON
+```
+### Establecer la versión global de Python:
+```
+pyenv global $LATEST_PYTHON
+```
+### Descargar el script de instalación de Anaconda:
+```
+curl -O https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
+```
+### Hacer que el script de instalación sea ejecutable:
+```
+chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh
+```
+### Ejecutar el script de instalación de Anaconda:
+```
+./Anaconda3-2024.06-1-Linux-x86_64.sh
+```
+
+1. Presiona Enter para revisar el acuerdo de licencia. Luego mantén presionada la tecla Enter para desplazarte.
+
+2. Escribe "yes" para aceptar el acuerdo de licencia.
+
+3. Presiona Enter para aceptar la ubicación de instalación predeterminada.
+
+4. Anaconda recomienda que ingreses "yes" para inicializar Anaconda Distribution ejecutando `conda init`.
+
+5. Cierra y vuelve a abrir tu terminal.
+
+6. Si no aparece el entorno `(base)`, ejecuta:  
+`conda config --set auto_activate_base True`.
+
+7. Para finalizar, ejecuta `anaconda-navigator` para comprobar su funcionamiento.
+
+# MYSQL
+---
+```sudo apt install mysql-server -y```
+```mysql -sfu root -proot < "MYSQL_SECURE_INSTALL.sql"```
+```systemctl status mysql.service```
+
+Una vez instalado entramos en mysql
+
+```mysql -u root```
+Dentremos ejecutamos lo siguiente : 
+```use mysql```
+```UPDATE user SET plugin='mysql_native_password' WHERE User='root';```
+```FLUSH PRIVILEGES;```
