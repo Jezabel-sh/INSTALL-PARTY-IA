@@ -135,9 +135,9 @@ chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh
 5. Cierra y vuelve a abrir tu terminal.
 
 6. Si no aparece el entorno `(base)`, ejecuta:  
-`conda config --set auto_activate_base True`.
+```conda config --set auto_activate_base True```.
 
-7. Para finalizar, ejecuta `anaconda-navigator` para comprobar su funcionamiento.
+7. Para finalizar, ejecuta ```anaconda-navigator``` para comprobar su funcionamiento.
 
 # MYSQL
 ---
